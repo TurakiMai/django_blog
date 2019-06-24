@@ -1,0 +1,12 @@
+{% load category_controller %}
+
+<h4 class="sidebar-title"><i class="fa fa-list-ul"></i> Categories</h4>
+<hr>
+<ul class="sidebar-list">
+
+    {% get_all_categories as category_list %}
+    {% for category in category_list %}
+        <li><a href="#">{{ category.name }}</a></li>
+    {% endfor %}
+
+</ul>

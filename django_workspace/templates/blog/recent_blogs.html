@@ -1,0 +1,17 @@
+{% load static %}
+<div class="blog-sidebar">
+    <h4 class="sidebar-title"><i class="fa fa-align-left"></i> Recent Blogs</h4>
+    <hr style="margin-bottom: 5px;">
+
+
+    {% load recent_tags %}
+    {% get_recent_article as recent_blogs %}
+    {% for article in recent_blogs %}
+        <div class="media">
+            <div class="media-body">
+                <h4 class="media-heading"><a href="#">{{ article.title }}</a></h4>
+                {{ article.excerpt }}
+            </div>
+        </div>
+    {% endfor %}
+</div>

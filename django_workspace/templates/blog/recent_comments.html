@@ -1,0 +1,16 @@
+<div class="blog-sidebar">
+    <h4 class="sidebar-title"><i class="fa fa-comments"></i> Recent Comments</h4>
+    <hr style="margin-bottom: 5px;">
+    <ul class="sidebar-list">
+
+        {% load recent_tags %}
+
+        {% get_recent_comment as comments %}
+        {% for comment in comments %}
+            <li><h5 class="blog-title">{{ comment.name }}</h5>
+                <p>{{ comment.text }}</p>
+            </li>
+        {% endfor %}
+
+    </ul>
+</div>
