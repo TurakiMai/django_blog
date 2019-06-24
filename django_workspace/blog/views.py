@@ -2,17 +2,18 @@ from django.core.paginator import Paginator
 from django.shortcuts import render
 
 # Create your views here.
-from blog.models import Article
+from blog.models import Article, IndexTitle
 from comment.models import Comment
 
 
 def index(request):
-    """
-    主页
-    :param request:
-    :return:
-    """
-    return render(request=request, template_name='blog/index.html')
+    indexTitles = IndexTitle.objects.all();
+
+    context = {
+        'indexTitles': indexTitles,
+    }
+
+    return render(request=request, context=context, template_name='blog/index.html')
 
 
 def blog_render(request):

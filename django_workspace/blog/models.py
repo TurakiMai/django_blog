@@ -45,3 +45,5 @@ class IndexTitle(models.Model):
     heading = models.CharField(max_length=100)
 
     subheading = models.CharField(max_length=100)
+
+    image = models.CharField(max_length=10, blank=True)
